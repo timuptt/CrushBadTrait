@@ -26,7 +26,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.Logger.LogInformation("Seeding Database...");
-using (var scope = app.Services.CreateScope())
+using var scope = app.Services.CreateScope();
 {
     var scopedProvider = scope.ServiceProvider;
     try
