@@ -1,4 +1,4 @@
-namespace CrushBadTraitWebApp.Models;
+namespace CrushBadTrait.WebApp.Models;
 
 public class ErrorViewModel
 {
