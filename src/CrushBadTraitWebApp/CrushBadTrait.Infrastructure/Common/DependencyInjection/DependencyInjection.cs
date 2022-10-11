@@ -10,7 +10,7 @@ public static class DependencyInjection
     public static IServiceCollection ImplementPersistence(this IServiceCollection services, 
         IConfiguration configuration)
     {
-        services.AddDbContext<CrushBadTraitDbContext>(o => 
+        services.AddDbContext<DbContext, CrushBadTraitDbContext>(o => 
             o.UseInMemoryDatabase("Traits"));
         
         // services.AddDbContext<CrushBadTraitDbContext>(options =>
