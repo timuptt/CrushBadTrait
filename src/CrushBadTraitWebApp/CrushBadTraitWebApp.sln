@@ -1,6 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrushBadTraitWebApp", "CrushBadTraitWebApp\CrushBadTraitWebApp.csproj", "{6B7A5C7F-45BB-46EE-BC66-0349ECE72192}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrushBadTrait.WebApp", "CrushBadTrait.WebApp\CrushBadTrait.WebApp.csproj", "{6B7A5C7F-45BB-46EE-BC66-0349ECE72192}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrushBadTrait.Application", "CrushBadTrait.Application\CrushBadTrait.Application.csproj", "{B2BBB8B5-FCDF-4637-B508-01D448BCC56E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9542A1ED-36F4-488A-902D-DE797F89DB78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{6ADF0C27-66B5-463B-AE32-42AA257B8DBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{1EFD195F-09DC-41BF-A445-7722A120B96F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{29981539-53F3-48FD-91B2-FB6C0F66FC58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrushBadTrait.Infrastructure", "CrushBadTrait.Infrastructure\CrushBadTrait.Infrastructure.csproj", "{5BE62677-DAD2-410E-8AD7-64CED7B81E80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +24,18 @@ Global
 		{6B7A5C7F-45BB-46EE-BC66-0349ECE72192}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B7A5C7F-45BB-46EE-BC66-0349ECE72192}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B7A5C7F-45BB-46EE-BC66-0349ECE72192}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2BBB8B5-FCDF-4637-B508-01D448BCC56E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2BBB8B5-FCDF-4637-B508-01D448BCC56E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2BBB8B5-FCDF-4637-B508-01D448BCC56E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2BBB8B5-FCDF-4637-B508-01D448BCC56E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE62677-DAD2-410E-8AD7-64CED7B81E80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE62677-DAD2-410E-8AD7-64CED7B81E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BE62677-DAD2-410E-8AD7-64CED7B81E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE62677-DAD2-410E-8AD7-64CED7B81E80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B2BBB8B5-FCDF-4637-B508-01D448BCC56E} = {9542A1ED-36F4-488A-902D-DE797F89DB78}
+		{6B7A5C7F-45BB-46EE-BC66-0349ECE72192} = {1EFD195F-09DC-41BF-A445-7722A120B96F}
+		{5BE62677-DAD2-410E-8AD7-64CED7B81E80} = {6ADF0C27-66B5-463B-AE32-42AA257B8DBB}
 	EndGlobalSection
 EndGlobal

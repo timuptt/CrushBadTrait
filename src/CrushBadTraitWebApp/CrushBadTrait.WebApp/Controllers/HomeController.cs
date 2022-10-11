@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
+using CrushBadTrait.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
-using CrushBadTraitWebApp.Models;
 
-namespace CrushBadTraitWebApp.Controllers;
+namespace CrushBadTrait.WebApp.Controllers;
 
 public class HomeController : Controller
 {
