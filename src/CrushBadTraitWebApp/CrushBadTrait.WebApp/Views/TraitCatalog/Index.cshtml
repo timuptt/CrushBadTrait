@@ -1,0 +1,74 @@
+@model CrushBadTrait.WebApp.ViewModels.TraitCatalogViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Trait catalog</title>
+</head>
+<body>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Trait catalog</h1>
+        <p>
+            <a href="~/EnterDayReports/Index" class="btn btn-primary my-2">Enter day reports</a>
+            <a asp-action="Create" class="btn btn-outline-secondary my-2" >
+                <span class="fa fa-plus me-2"></span>Add trait
+            </a>
+        </p>
+    </div>
+</section>
+ <div class="album py-5 bg-light">
+ <div class="container">
+
+   <div class="row">
+     @foreach (var item in Model.Traits)
+     {
+         <div class="col-md-4">
+             <div class="card mb-4 box-shadow">
+                 <div class="card-body">
+                     <div class="card-header d-flex align-items-center">
+                         <span class="fa-solid fa-quote-left me-3"></span>
+                         <p class="card-text">@item.Name</p>
+                     </div>
+                     
+                     <p class="card-text">@item.Description</p>
+                     <div class="d-flex justify-content-between align-items-center">
+                         <div class="btn-group">
+                             <a type="btn btn-success"
+                                class="btn btn-sm btn-outline-primary"
+                                asp-controller="TraitCatalog"
+                                asp-action="Detail"
+                                asp-route-id="@item.Id">
+                                 <span class="fa fa-eye"></span> 
+                                 View
+                             </a>
+                             <a type="btn btn-success" 
+                                class="btn btn-sm btn-outline-secondary"
+                                asp-action="Edit"
+                                asp-route-id="@item.Id">
+                                 <span class="fa fa-pen-alt"></span>
+                                 Edit
+                             </a>
+                             <a type="btn btn-success" class="btn btn-sm btn-outline-danger"
+                                asp-action="Delete"
+                                asp-route-id="@item.Id">
+                                 <span class="fa fa-trash-can"></span>
+                                 Delete
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="card-footer">
+                     <small class="text-muted">Average grade: @item.AverageGrade</small>
+                     <small class="text-muted">Days on track: @item.DayReports?.Count</small>
+                 </div>
+             </div>
+         </div>
+     }
+   </div>
+ </div>
+ </div>
+ 
+</body>
+</html>

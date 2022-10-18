@@ -1,0 +1,60 @@
+@model CrushBadTrait.WebApp.ViewModels.TraitViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@Model.Name</title>
+</head>
+<body>
+<button class="btn btn-outline-primary mb-3">
+    <span class="fa fa-arrow-left"></span>
+    Back
+</button>
+<div class="col-mb-8">
+    <div class="row justify-content-center">
+        <div class="card mb-4 box-shadow">
+            <div class="card-body">
+                <p class="card-header">@Model.Name</p>
+                <p class="card-text">@Model.Description</p>
+                <p class="card-text">Day reports:</p>
+                <div class="row">
+                    @foreach (var day in @Model.DayReports)
+                    {
+                        <div class="col-md-3">
+                            <div class="card mb-4 box-shadow">
+                                <div class="card-body">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <span class="fa fa-calendar-days"></span>
+                                        <p class="card-text">@day.Date.ToShortDateString()</p>
+                                    </div>
+                                    <div class="card-text d-flex justify-content-between align-items-center">
+                                        <span class="fa fa-pen-alt m-3"></span>
+                                        <p class="card-text me-3">@day.Note</p>
+                                    </div>
+                                    <div class="card-text d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center m-3">
+                                            <span class="fa fa-clock me-1"></span>
+                                            <p class="card-text">Periodicity</p>
+                                        </div>
+                                        <p class="card-text me-3"> @day.Periodicity time</p>
+                                    </div>
+                                    <div class="card-text d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center m-3">
+                                            <span class="fa fa-award me-1"></span>
+                                            <p class="card-text">Grade</p>
+                                        </div>
+                                        <p class="card-text me-3"> @day.Grade</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
