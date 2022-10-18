@@ -3,7 +3,7 @@ using CrushBadTrait.Core.Entities;
 
 namespace CrushBadTrait.Core.Secifications;
 
-public class TraitCatalogByUserIdSpecification : Specification<Trait>
+public sealed class TraitCatalogByUserIdSpecification : Specification<Trait>
 {
     public TraitCatalogByUserIdSpecification(Guid? userId)
     {

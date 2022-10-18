@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CrushBadTrait.Infrastructure.Repositories;
 
-public class TraitRepository<T> : RepositoryBase<T>, IRepository<T> where T: class, IAggregateRoot
+public class TraitRepository<T> : RepositoryBase<T>, IRepository<T> where T: class, IEntity
 {
     public TraitRepository(DbContext dbContext) : base(dbContext)
     {
