@@ -12,6 +12,7 @@ public static class ConfigureCoreServices
         services.AddScoped(typeof(IRepository<>), typeof(TraitRepository<>));
 
         services.AddScoped<ITraitService, TraitService>();
+        services.AddScoped<IDayReportsService, DayReportsService>();
 
         return services;
     }
