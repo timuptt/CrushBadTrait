@@ -7,8 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Logging.AddConsole();
 builder.Services.ImplementPersistence(builder.Configuration);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+// Add services to the container. Enable runtime compilation.
+builder.Services.AddControllersWithViews()
+    .AddRazorRuntimeCompilation();
 
 builder.Services.AddCoreServices();
 builder.Services.AddWebServices();
