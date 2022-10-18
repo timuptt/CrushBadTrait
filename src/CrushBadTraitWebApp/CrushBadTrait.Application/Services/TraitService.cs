@@ -1,3 +1,4 @@
+using Ardalis.GuardClauses;
 using CrushBadTrait.Core.Entities;
 using CrushBadTrait.Core.Interfaces.Repositories;
 using CrushBadTrait.Core.Interfaces.Services;
@@ -13,28 +14,31 @@ public class TraitService : ITraitService
         _traitRepository = traitRepository;
     }
 
-    public async Task<Trait> CreateTrait()
+    public async Task<Trait> CreateTrait(Guid userId, string name, string description)
     {
-        throw new NotImplementedException();
+        var trait = new Trait(userId, name, description);
+        return await _traitRepository.AddAsync(trait);
     }
 
-    public async Task<IEnumerable<Trait>> GetTraits()
+    public async Task<Trait?> UpdateTrait(Guid id, string name, string description)
     {
-        throw new NotImplementedException();
-    }
+        var trait = await _traitRepository.GetByIdAsync(id);
+        if (trait != null)
+        {
+            trait.Name = name;
+            trait.Description = description;
+            await _traitRepository.UpdateAsync(trait);
+        }
 
-    public async Task<Trait> GetTrait(Guid id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<Trait> UpdateTrait(Guid id, Trait updatedTrait)
-    {
-        throw new NotImplementedException();
+        return null;
     }
 
     public async Task DeleteTrait(Guid id)
     {
-        throw new NotImplementedException();
+        var trait = await _traitRepository.GetByIdAsync(id);
+        if (trait != null)
+        {
+            await _traitRepository.DeleteAsync(trait);
+        }
     }
 }
