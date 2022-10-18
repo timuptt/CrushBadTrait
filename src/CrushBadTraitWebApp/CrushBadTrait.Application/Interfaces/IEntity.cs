@@ -1,6 +1,3 @@
 namespace CrushBadTrait.Core.Interfaces;
 
-public interface IAggregateRoot
-{
-    
-}
+public interface IEntity { }
