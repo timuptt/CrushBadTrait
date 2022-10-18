@@ -35,15 +35,6 @@ public class TraitCatalogViewModelService : ITraitCatalogViewModelService
                 Description = i.Description,
                 UserId = i.UserId,
                 AverageGrade = i.AverageGrade,
-                Days = i.Days.Select(d => new DayReportViewModel()
-                {
-                    Id = d.Id,
-                    Note = d.Note,
-                    Date = d.Date,
-                    Grade = d.Grade,
-                    Periodicity = d.Periodicity,
-                    TraitId = d.TraitId
-                }).ToList()
             }).ToList()
         };
 
