@@ -52,7 +52,7 @@ public class CrushAndTraitDbContextSeeder
                 Description =
                     "unnecessarily and voluntarily delaying or postponing something despite knowing that there will be negative consequences for doing so",
                 AverageGrade = 3,
-                Days = new List<DayReport>()
+                DayReports = new List<DayReport>()
                 {
                     new DayReport()
                     {
