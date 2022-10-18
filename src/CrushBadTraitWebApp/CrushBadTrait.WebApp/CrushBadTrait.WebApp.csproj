@@ -14,6 +14,7 @@
     <ItemGroup>
       <PackageReference Include="Ardalis.ListStartupServices" Version="1.1.4" />
       <PackageReference Include="Ardalis.Specification" Version="6.1.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.10" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0-rc.2.22472.11" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.0-rc.2.22472.11" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0-rc.2.22472.11">
