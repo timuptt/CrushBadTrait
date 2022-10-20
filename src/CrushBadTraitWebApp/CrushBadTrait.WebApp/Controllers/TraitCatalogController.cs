@@ -1,30 +1,35 @@
+using CrushBadTrait.Core.Entities.Interfaces;
 using CrushBadTrait.Core.Interfaces.Services;
 using CrushBadTrait.WebApp.Interfaces;
 using CrushBadTrait.WebApp.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CrushBadTrait.WebApp.Controllers;
 
+[Authorize]
 public class TraitCatalogController : Controller
 {
     private readonly ITraitCatalogViewModelService _traitCatalogViewModelService;
     private readonly ITraitViewModelService _traitViewModelService;
     private readonly ITraitService _traitService;
+    private readonly ICurrentUserService _currentUserService;
 
     public TraitCatalogController(ITraitCatalogViewModelService traitCatalogViewModelService, 
-        ITraitViewModelService traitViewModelService, ITraitService traitService)
+        ITraitViewModelService traitViewModelService, ITraitService traitService, ICurrentUserService currentUserService)
     {
         _traitCatalogViewModelService = traitCatalogViewModelService;
         _traitViewModelService = traitViewModelService;
         _traitService = traitService;
+        _currentUserService = currentUserService;
     }
 
     // GET
     public async Task<IActionResult> Index()
     {
-        var traitCatalogVM = await GetTraitCatalogAsync();
+        var traitCatalogVm = await GetTraitCatalogAsync(_currentUserService.UserId);
         
-        return View(traitCatalogVM);
+        return View(traitCatalogVm);
     }
     
     public async Task<IActionResult> Detail(Guid id)
@@ -46,7 +51,7 @@ public class TraitCatalogController : Controller
             return View(request);
         }
 
-        await _traitService.CreateTrait(Guid.Empty, request.Name, request.Description);
+        await _traitService.CreateTrait(_currentUserService.UserId, request.Name, request.Description);
         
         return RedirectToAction("Index");
     }
@@ -90,8 +95,8 @@ public class TraitCatalogController : Controller
         return RedirectToAction("Index");
     }
     
-    private async Task<TraitCatalogViewModel> GetTraitCatalogAsync()
+    private async Task<TraitCatalogViewModel> GetTraitCatalogAsync(Guid userId)
     {
-        return await _traitCatalogViewModelService.GetTraitsByUserIdAsync(Guid.Empty);
+        return await _traitCatalogViewModelService.GetTraitsByUserIdAsync(userId);
     }
 }
