@@ -1,20 +1,33 @@
+using CrushBadTrait.Core.Entities;
 using CrushBadTrait.Infrastructure.Common.DependencyInjection;
 using CrushBadTrait.Infrastructure.Data.Contexts;
 using CrushBadTrait.WebApp.Configuration;
+using CrushBadTrait.WebApp.Identity;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.AddConsole();
-builder.Services.ImplementPersistence(builder.Configuration);
 
 // Add services to the container. Enable runtime compilation.
 builder.Services.AddControllersWithViews()
     .AddRazorRuntimeCompilation();
 
-builder.Services.AddCoreServices();
-builder.Services.AddWebServices();
+builder.Services.ImplementPersistence(builder.Configuration);
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<CrushBadTraitDbContext>();
 
 builder.Services.AddMemoryCache();
+builder.Services.AddSession();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie();
+
+builder.Services.AddCoreServices();
+builder.Services.AddWebServices();
+builder.Services.AddIdentityService();
+
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
@@ -35,6 +48,7 @@ using var scope = app.Services.CreateScope();
         var context = scopedProvider.GetRequiredService<CrushBadTraitDbContext>();
 
         await CrushAndTraitDbContextSeeder.SeedAsync(context, app.Logger);
+        await CrushAndTraitDbContextSeeder.SeedUsersAndRolesAsync(scopedProvider, app.Logger);
     }
     catch (Exception ex)
     {
@@ -47,6 +61,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

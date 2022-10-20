@@ -1,4 +1,7 @@
+using CrushBadTrait.Core.Entities;
 using CrushBadTrait.Infrastructure.Data.Contexts;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +15,7 @@ public static class DependencyInjection
     {
         services.AddDbContext<DbContext, CrushBadTraitDbContext>(o => 
             o.UseInMemoryDatabase("Traits"));
-        
+
         // services.AddDbContext<CrushBadTraitDbContext>(options =>
         //         options.UseSqlite(configuration.GetConnectionString("SQLiteConnectionString"),
         //             b => b.MigrationsAssembly(typeof(CrushBadTraitDbContext).Assembly.FullName)), 
