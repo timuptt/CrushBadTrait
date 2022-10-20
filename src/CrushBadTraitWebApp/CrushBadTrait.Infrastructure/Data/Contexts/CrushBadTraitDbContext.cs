@@ -1,10 +1,10 @@
-using System.Reflection;
 using CrushBadTrait.Core.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CrushBadTrait.Infrastructure.Data.Contexts;
 
-public class CrushBadTraitDbContext : DbContext
+public class CrushBadTraitDbContext : IdentityDbContext<User>
 {
     public DbSet<DayReport> Days { get; set; }
     public DbSet<Trait> Traits { get; set; }
