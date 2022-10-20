@@ -11,6 +11,7 @@ public static class ConfigureWebServices
         services.AddScoped<ITraitCatalogViewModelService, TraitCatalogViewModelService>();
         services.AddScoped<ITraitViewModelService, TraitViewModelService>();
         services.AddScoped<IDayReportViewModelService, DayReportViewModelService>();
+        services.AddScoped<IUserService, UserService>();
 
         return services;
     }
