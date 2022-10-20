@@ -1,0 +1,28 @@
+@model CrushBadTrait.WebApp.ViewModels.ProfileViewModel
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+<button class="btn btn-outline-primary mb-3">
+    <span class="fa fa-arrow-left"></span>
+    Back
+</button>
+<div class="col-mb-8">
+    <div class="row justify-content-center">
+        <div class="card mb-4 box-shadow">
+            <div class="card-body">
+                <p class="card-header">Your profile</p>
+                <p class="card-text">Name: @Model.Name</p>
+                <p class="card-text">End of day: @Model.EndOfDayTime.ToShortTimeString()</p>
+                <p class="card-text">Start of improving: @Model.StartImprovingDate.ToShortDateString()</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

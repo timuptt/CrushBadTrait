@@ -18,7 +18,7 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <div class="navbar-collapse collapse d-sm-inline-flex">
                 <ul class="navbar-nav flex-grow-1">
                     @if ((bool)User.Identity?.IsAuthenticated)
                     {
@@ -26,12 +26,22 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="TraitCatalog" asp-action="Index">Trait Catalog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-outline-danger" asp-controller="Account" asp-action="Logout">Log out</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Profile">Profile</a>
+                        </li>
+                        <li class="nav-item ms-auto">
+                            <a class="btn btn-outline-danger " asp-controller="Account" asp-action="Logout">Sign out</a>
                         </li>
                     }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary" asp-controller="Account" asp-action="Login">Sign in</a>
+                        </li> 
+                    }
                 </ul>
-                </div>
-                </div>
+                
+            </div>
+        </div>
     </nav>
 </header>
 <div class="container">
