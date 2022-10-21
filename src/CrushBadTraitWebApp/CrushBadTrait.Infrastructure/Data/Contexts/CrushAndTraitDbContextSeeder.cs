@@ -15,6 +15,11 @@ public class CrushAndTraitDbContextSeeder
         var retryForAvailability = retry;
         try
         {
+            if (context.Database.IsSqlServer())
+            {
+                await context.Database.MigrateAsync();
+            }
+            
             if (!await context.Traits.AnyAsync())
             {
                 await context.AddRangeAsync(GetPreconfiguredTraits());
@@ -82,7 +87,7 @@ public class CrushAndTraitDbContextSeeder
                         EmailConfirmed = true,
                         UserDetails = new UserDetails()
                         {
-                            EndOfDayTime = new TimeOnly(22, 0),
+                            EndOfDayTime = new TimeSpan(22,0,0),
                             Id = Guid.NewGuid(),
                             StartImprovingDate = DateTime.Now.AddDays(-1),
                         }

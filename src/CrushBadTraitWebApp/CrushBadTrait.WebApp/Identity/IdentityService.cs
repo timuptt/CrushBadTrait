@@ -37,7 +37,7 @@ public class IdentityService : IIdentityService
         return result;
     }
 
-    public async Task<IdentityResult> RegisterAsync(string email, string password, TimeOnly endOfDayTime, string name)
+    public async Task<IdentityResult> RegisterAsync(string email, string password, TimeSpan endOfDayTime, string name)
     {
         var user = await _userManager.FindByEmailAsync(email);
 
