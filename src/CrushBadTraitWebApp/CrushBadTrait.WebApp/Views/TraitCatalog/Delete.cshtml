@@ -1,11 +1,10 @@
 @model CrushBadTrait.WebApp.ViewModels.TraitViewModel
-
+@{
+    ViewData["Title"] = $"Delete {@Model.Name}";
+}
 <!DOCTYPE html>
 
 <html>
-<head>
-    <title>Detele @Model Name</title>
-</head>
 <section class="jumbotron text-center">
     <div class="container">
         <h1 class="jumbotron-heading">Are you shure you want to delete trait @Model.Name?</h1>
@@ -16,7 +15,10 @@
     <div class="row justify-content-center">
         <div class="card mb-4 box-shadow">
             <div class="card-body">
-                <p class="card-header">@Model.Name</p>
+                <div class="card-header d-flex align-items-center">
+                    <span class="fa-solid fa-quote-left me-3 text-secondary"></span>
+                    <p class="card-text text-dark">@Model.Name</p>
+                </div>
                 <p class="card-text">@Model.Description</p>
                 <p class="card-text">Day reports:</p>
                 <div class="row">
@@ -26,23 +28,23 @@
                             <div class="card mb-4 box-shadow">
                                 <div class="card-body">
                                     <div class="card-header d-flex justify-content-between align-items-center">
-                                        <span class="fa fa-calendar-days"></span>
+                                        <span class="fa fa-calendar-days text-primary"></span>
                                         <p class="card-text">@day.Date.ToShortDateString()</p>
                                     </div>
                                     <div class="card-text d-flex justify-content-between align-items-center">
-                                        <span class="fa fa-pen-alt m-3"></span>
+                                        <span class="fa fa-pen-alt m-3 text-primary"></span>
                                         <p class="card-text me-3">@day.Note</p>
                                     </div>
                                     <div class="card-text d-flex align-items-center justify-content-between">
                                         <div class="d-flex align-items-center m-3">
-                                            <span class="fa fa-clock me-1"></span>
+                                            <span class="fa fa-clock me-1 text-primary"></span>
                                             <p class="card-text">Periodicity</p>
                                         </div>
                                         <p class="card-text me-3"> @day.Periodicity time</p>
                                     </div>
                                     <div class="card-text d-flex align-items-center justify-content-between">
                                         <div class="d-flex align-items-center m-3">
-                                            <span class="fa fa-award me-1"></span>
+                                            <span class="fa fa-award me-1 text-primary"></span>
                                             <p class="card-text">Grade</p>
                                         </div>
                                         <p class="card-text me-3"> @day.Periodicity time</p>

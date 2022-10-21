@@ -1,20 +1,19 @@
 @model CrushBadTrait.WebApp.ViewModels.TraitCreateViewModel
 
 <!DOCTYPE html>
-
+@{
+    ViewData["Title"] = "New trait";
+}
 <html>
-<head>
-    <title>Add new trait</title>
-</head>
 <body>
 <div>
   <form method="post" asp-action="Create">
-    <div class="form-group">
+    <div class="form-group mb-3">
       <label asp-for="Name">Name</label>
       <input asp-for="Name" type="text" class="form-control" placeholder="Trait name">
       <span asp-validation-for="Name" class="text-danger"></span>
     </div>
-    <div class="form-group">
+    <div class="form-group mb-3">
       <label asp-for="Description">Description</label>
       <textarea asp-for="Description" class="form-control" placeholder="Simple description"></textarea>
       <span asp-validation-for="Description" class="text-danger"></span>

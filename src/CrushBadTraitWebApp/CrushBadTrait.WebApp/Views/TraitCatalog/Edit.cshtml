@@ -1,22 +1,21 @@
 @model CrushBadTrait.WebApp.ViewModels.TraitEditViewModel
-
+@{
+    ViewData["Title"] = $"Edit {@Model.Name}";
+}
 
 <!DOCTYPE html>
 
 <html>
-<head>
-    <title>Edit @Model.Name</title>
-</head>
 <body>
 <div>
     <div>
         <form method="post" asp-action="Edit">
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="Name">Name</label>
                 <input asp-for="Name" type="text" class="form-control" placeholder="Trait name">
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="Description">Description</label>
                 <textarea asp-for="Description" class="form-control" placeholder="Simple description"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>

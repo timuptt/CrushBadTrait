@@ -1,41 +1,41 @@
 @using CrushBadTrait.WebApp.ViewModels
 @model DayReportsViewModel
+@{
+    ViewData["Title"] = "Enter day reports";
+}
 
 <!DOCTYPE html>
 
 <html>
-<head>
-    <title>Enter day reports</title>
-</head>
 <body>
 <form method="post" asp-action="Create">
     <div class="row justify-content-center">
         @for(var i = 0; i < @Model.DayReports.Count; i++)
         {
             <div class="col-md-8">
-                <div class="card mb-4 box-shadow">
+                <div class="card mb-4 box-shadow border-secondary">
                     <div class="card-body">
                         <div class="card-header d-flex align-items-center">
-                            <span class="fa fa-calendar-check me-3"></span>
+                            <span class="fa fa-calendar-check me-3 text-primary"></span>
                             <p class="card-text">@Model.DayReports[i].TraitName</p>
                         </div>
                         <input asp-for="DayReports[i].TraitId" type="text" value="@Model.DayReports[i].TraitId" hidden="hidden"/>
                         <div class="card-text d-flex align-items-center mt-1 mb-1">
-                            <span class="fa fa-pen-alt  ms-3 me-3 "></span>
+                            <span class="fa fa-pen-alt  ms-3 me-3 text-info"></span>
                             <div class="form-group col-md-11">
                                 <input asp-for="DayReports[i].Note" type="text" class="form-control" placeholder="Short note">
                                 <span asp-validation-for="DayReports[i].Note" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="card-text d-flex align-items-center mb-1">
-                            <span class="fa fa-clock ms-3 me-3"></span>
+                            <span class="fa fa-clock ms-3 me-3 text-info" ></span>
                             <div class="form-group col-md-11">
                                 <input asp-for="DayReports[i].Periodicity" type="number" class="form-control" placeholder="Periodicity">
                                 <span asp-validation-for="DayReports[i].Periodicity" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="card-text d-flex align-items-center ">
-                            <span class="fa-solid fa-medal ms-3 me-3"></span>
+                            <span class="fa-solid fa-medal ms-3 me-3 text-info"></span>
                             <div class="form-group col-md-11">
                                 <input asp-for="DayReports[i].Grade" type="number" class="form-control" placeholder="Grade">
                                 <span asp-validation-for="DayReports[i].Grade" class="text-danger"></span>
