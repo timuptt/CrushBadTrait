@@ -8,6 +8,8 @@ public sealed class TraitsWithoutCurrentDayReportSpecification : Specification<T
     public TraitsWithoutCurrentDayReportSpecification(Guid userId)
     {
         Query.Include(t => t.DayReports)
-            .Where(t => t.DayReports!.Count == 0 || t.DayReports.AsEnumerable().Last().Date.Date < DateTime.Now.Date); 
+            .Where(t=> t.UserId == userId)
+            .Where(t => t.DayReports!.Count == 0 || t.DayReports.AsEnumerable()
+                .OrderBy(d => d.Date).Last().Date.Date < DateTime.Now.Date); 
     }
 }
