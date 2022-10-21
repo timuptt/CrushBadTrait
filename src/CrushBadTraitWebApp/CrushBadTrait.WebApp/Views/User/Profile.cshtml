@@ -18,7 +18,7 @@
             <div class="card-body">
                 <p class="card-header">Your profile</p>
                 <p class="card-text">Name: @Model.Name</p>
-                <p class="card-text">End of day: @Model.EndOfDayTime.ToShortTimeString()</p>
+                <p class="card-text">End of day: @TimeOnly.FromTimeSpan(@Model.EndOfDayTime).ToShortTimeString()</p>
                 <p class="card-text">Start of improving: @Model.StartImprovingDate.ToShortDateString()</p>
             </div>
         </div>

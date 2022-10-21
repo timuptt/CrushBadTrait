@@ -18,5 +18,5 @@ public class RegisterViewModel
     public string Name { get; set; }
     [Required]
     [DataType(DataType.Time)]
-    public TimeOnly EndOfDayTime { get; set; }
+    public TimeSpan EndOfDayTime { get; set; }
 }
