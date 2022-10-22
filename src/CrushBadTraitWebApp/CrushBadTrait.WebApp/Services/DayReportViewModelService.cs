@@ -1,4 +1,3 @@
-using CrushBadTrait.Core.Interfaces.Services;
 using CrushBadTrait.WebApp.Interfaces;
 using CrushBadTrait.WebApp.ViewModels;
 
@@ -10,8 +9,8 @@ public class DayReportViewModelService : IDayReportViewModelService
     {
         var dayReportsViewModel = new DayReportsViewModel()
         {
-            DayReports = idAndNames.Select(idAndNames => new CreateDayReportViewModel()
-                { TraitId = idAndNames.Item1, TraitName = idAndNames.Item2 }).ToList()
+            DayReports = idAndNames.Select(ian => new CreateDayReportViewModel()
+                { TraitId = ian.Item1, TraitName = ian.Item2 }).ToList()
         };
         
         return dayReportsViewModel;

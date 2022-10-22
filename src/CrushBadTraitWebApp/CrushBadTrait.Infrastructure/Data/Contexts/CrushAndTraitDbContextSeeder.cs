@@ -1,4 +1,5 @@
 using CrushBadTrait.Core.Entities;
+using CrushBadTrait.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,8 +9,8 @@ namespace CrushBadTrait.Infrastructure.Data.Contexts;
 
 public class CrushAndTraitDbContextSeeder
 {
-    private static Guid user1Id = Guid.NewGuid();
-    private static Guid user2Id = Guid.NewGuid(); 
+    private static readonly Guid User1Id = Guid.NewGuid();
+    private static readonly Guid User2Id = Guid.NewGuid(); 
     public static async Task SeedAsync(CrushBadTraitDbContext context, ILogger logger, int retry = 0)
     {
         var retryForAvailability = retry;
@@ -62,7 +63,7 @@ public class CrushAndTraitDbContextSeeder
                 {
                     var newAdminUser = new User()
                     {
-                        Id = user2Id.ToString(),
+                        Id = User2Id.ToString(),
                         UserName = "admin",
                         Name = "Admin Name",
                         Email = adminUserEmail,
@@ -80,7 +81,7 @@ public class CrushAndTraitDbContextSeeder
                 {
                     var newAppUser = new User()
                     {
-                        Id = user1Id.ToString(),
+                        Id = User1Id.ToString(),
                         UserName = "user",
                         Name = "User Name",
                         Email = appUserEmail,
@@ -107,7 +108,7 @@ public class CrushAndTraitDbContextSeeder
             new Trait()
             {
                 Id = Guid.NewGuid(),
-                UserId = user1Id,
+                UserId = User1Id,
                 Name = "Doomscrolling",
                 Description = "Uncontroled scrolling news",
                 AverageGrade = 0.0
@@ -115,7 +116,7 @@ public class CrushAndTraitDbContextSeeder
             new Trait()
             {
                 Id = trait2Id,
-                UserId = user1Id,
+                UserId = User1Id,
                 Name = "Procrastination",
                 Description =
                     "unnecessarily and voluntarily delaying or postponing something despite knowing that there will be negative consequences for doing so",

@@ -4,5 +4,5 @@ namespace CrushBadTrait.WebApp.Interfaces;
 
 public interface ITraitViewModelService
 {
-    Task<TraitViewModel> GetTraitByIdAsync(Guid id);
+    Task<TraitViewModel?> GetTraitByIdAsync(Guid id);
 }

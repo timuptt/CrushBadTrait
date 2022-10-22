@@ -1,4 +1,3 @@
-using Ardalis.GuardClauses;
 using CrushBadTrait.Core.Entities;
 using CrushBadTrait.Core.Interfaces.Repositories;
 using CrushBadTrait.Core.Interfaces.Services;

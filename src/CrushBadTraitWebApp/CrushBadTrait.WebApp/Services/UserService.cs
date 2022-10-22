@@ -1,6 +1,7 @@
 using Ardalis.GuardClauses;
 using CrushBadTrait.Core.Entities;
 using CrushBadTrait.Core.Interfaces.Repositories;
+using CrushBadTrait.Infrastructure.Identity;
 using CrushBadTrait.WebApp.Interfaces;
 using CrushBadTrait.WebApp.ViewModels;
 using Microsoft.AspNetCore.Identity;
