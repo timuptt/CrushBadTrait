@@ -1,4 +1,4 @@
-namespace CrushBadTrait.Core.Entities.Interfaces;
+namespace CrushBadTrait.Infrastructure.Identity.Interfaces;
 
 public interface ICurrentUserService
 {

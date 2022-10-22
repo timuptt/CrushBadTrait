@@ -1,6 +1,7 @@
 using CrushBadTrait.Core.Entities;
 using CrushBadTrait.Infrastructure.Common.DependencyInjection;
 using CrushBadTrait.Infrastructure.Data.Contexts;
+using CrushBadTrait.Infrastructure.Identity;
 using CrushBadTrait.WebApp.Configuration;
 using CrushBadTrait.WebApp.Identity;
 using Microsoft.AspNetCore.Authentication.Cookies;

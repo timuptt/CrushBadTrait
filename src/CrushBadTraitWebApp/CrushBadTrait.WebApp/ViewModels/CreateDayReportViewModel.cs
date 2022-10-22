@@ -1,5 +1,3 @@
-using Microsoft.EntityFrameworkCore.Diagnostics;
-
 namespace CrushBadTrait.WebApp.ViewModels;
 
 public class CreateDayReportViewModel

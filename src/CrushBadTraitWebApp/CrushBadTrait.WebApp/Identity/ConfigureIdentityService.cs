@@ -1,4 +1,5 @@
 using CrushBadTrait.Core.Entities.Interfaces;
+using CrushBadTrait.Infrastructure.Identity.Interfaces;
 using CrushBadTrait.WebApp.Services;
 
 namespace CrushBadTrait.WebApp.Identity;

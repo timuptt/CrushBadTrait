@@ -1,6 +1,7 @@
+using CrushBadTrait.Core.Entities;
 using Microsoft.AspNetCore.Identity;
 
-namespace CrushBadTrait.Core.Entities;
+namespace CrushBadTrait.Infrastructure.Identity;
 
 public class User : IdentityUser
 {

@@ -1,4 +1,3 @@
-using System.Linq;
 using CrushBadTrait.Core.Entities;
 using CrushBadTrait.Core.Interfaces.Repositories;
 using CrushBadTrait.Core.Secifications;
@@ -14,11 +13,6 @@ public class TraitCatalogViewModelService : ITraitCatalogViewModelService
     public TraitCatalogViewModelService(IRepository<Trait> traitRepository)
     {
         _traitRepository = traitRepository;
-    }
-    
-    public async Task<TraitCatalogViewModel> GetTraitsAsync()
-    {
-        throw new NotImplementedException();
     }
 
     public async Task<TraitCatalogViewModel> GetTraitsByUserIdAsync(Guid userId)

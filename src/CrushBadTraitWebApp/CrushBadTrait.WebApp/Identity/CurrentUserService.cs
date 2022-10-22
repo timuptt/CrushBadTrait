@@ -1,7 +1,7 @@
 using System.Security.Claims;
-using CrushBadTrait.Core.Entities.Interfaces;
+using CrushBadTrait.Infrastructure.Identity.Interfaces;
 
-namespace CrushBadTrait.WebApp.Services;
+namespace CrushBadTrait.WebApp.Identity;
 
 public class CurrentUserService : ICurrentUserService
 {

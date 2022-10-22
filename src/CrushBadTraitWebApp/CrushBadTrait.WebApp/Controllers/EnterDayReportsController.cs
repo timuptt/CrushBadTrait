@@ -1,7 +1,6 @@
-using CrushBadTrait.Core.Entities.Interfaces;
 using CrushBadTrait.Core.Interfaces.Services;
+using CrushBadTrait.Infrastructure.Identity.Interfaces;
 using CrushBadTrait.WebApp.Interfaces;
-using CrushBadTrait.WebApp.Services;
 using CrushBadTrait.WebApp.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

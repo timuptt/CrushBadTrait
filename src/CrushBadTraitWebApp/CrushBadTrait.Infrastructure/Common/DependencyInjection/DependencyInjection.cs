@@ -1,7 +1,4 @@
-using CrushBadTrait.Core.Entities;
 using CrushBadTrait.Infrastructure.Data.Contexts;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +10,7 @@ public static class DependencyInjection
     public static IServiceCollection ImplementPersistence(this IServiceCollection services, 
         IConfiguration configuration)
     {
-        if (configuration.GetSection("UseInMemoryDb").Value.ToLower() != "true")
+        if (configuration.GetSection("UseInMemoryDb").Value?.ToLower() != "true")
         {
             services.AddDbContext<DbContext, CrushBadTraitDbContext>(options =>
                     options.UseSqlServer(configuration.GetConnectionString("SqlServer"),
