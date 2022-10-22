@@ -1,9 +1,7 @@
 using CrushBadTrait.Core.Entities;
 using CrushBadTrait.Core.Entities.Interfaces;
-using CrushBadTrait.Infrastructure.Data.Contexts;
-using CrushBadTrait.WebApp.ViewModels;
+using CrushBadTrait.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace CrushBadTrait.WebApp.Identity;
@@ -12,14 +10,11 @@ public class IdentityService : IIdentityService
 {
     private readonly UserManager<User> _userManager;
     private readonly SignInManager<User> _signInManager;
-    private readonly CrushBadTraitDbContext _dbContext;
 
-    public IdentityService(SignInManager<User> signInManager, UserManager<User> userManager,
-        CrushBadTraitDbContext dbContext)
+    public IdentityService(SignInManager<User> signInManager, UserManager<User> userManager)
     {
         _signInManager = signInManager;
         _userManager = userManager;
-        _dbContext = dbContext;
     }
 
     public async Task<SignInResult> LoginAsync(string email, string password)

@@ -3,11 +3,11 @@ using CrushBadTrait.Core.Interfaces;
 
 namespace CrushBadTrait.Core.Entities;
 
-public class DayReport : BaseEntity, IEntity
+public sealed class DayReport : BaseEntity, IEntity
 {
     public Guid TraitId { get; set; }
     public DateTime Date { get; set; }
-    public string Note { get; set; }
+    public string Note { get; set; } = string.Empty;
     public int Periodicity { get; set; }
     public int Grade { get; set; }
 

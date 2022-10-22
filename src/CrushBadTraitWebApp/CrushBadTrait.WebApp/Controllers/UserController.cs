@@ -1,4 +1,4 @@
-using CrushBadTrait.Core.Entities.Interfaces;
+using CrushBadTrait.Infrastructure.Identity.Interfaces;
 using CrushBadTrait.WebApp.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

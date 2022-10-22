@@ -18,7 +18,7 @@ public class TraitViewModelService : ITraitViewModelService
     
     [HttpGet]
     [Route("TraitCatalog/task/{id:Guid}")]
-    public async Task<TraitViewModel> GetTraitByIdAsync(Guid id)
+    public async Task<TraitViewModel?> GetTraitByIdAsync(Guid id)
     {
         var specification = new TraitWithDaysByIdSpecification(id);
         var trait = await _repository.FirstOrDefaultAsync(specification);

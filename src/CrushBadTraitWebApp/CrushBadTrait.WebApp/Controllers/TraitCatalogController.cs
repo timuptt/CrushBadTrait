@@ -1,5 +1,5 @@
-using CrushBadTrait.Core.Entities.Interfaces;
 using CrushBadTrait.Core.Interfaces.Services;
+using CrushBadTrait.Infrastructure.Identity.Interfaces;
 using CrushBadTrait.WebApp.Interfaces;
 using CrushBadTrait.WebApp.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -90,7 +90,6 @@ public class TraitCatalogController : Controller
 
     public async Task<IActionResult> DeleteTrait(Guid id)
     {
-        var vm = await _traitViewModelService.GetTraitByIdAsync(id);
         await _traitService.DeleteTrait(id);
         return RedirectToAction("Index");
     }

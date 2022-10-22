@@ -1,4 +1,4 @@
-namespace CrushBadTrait.Core.Entities;
+namespace CrushBadTrait.Infrastructure.Identity;
 
 public static class UserRoles
 {

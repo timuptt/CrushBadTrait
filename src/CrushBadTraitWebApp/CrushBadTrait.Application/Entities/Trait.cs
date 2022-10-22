@@ -3,7 +3,7 @@ using CrushBadTrait.Core.Interfaces;
 
 namespace CrushBadTrait.Core.Entities;
 
-public class Trait : BaseEntity, IEntity
+public sealed class Trait : BaseEntity, IEntity
 {
     public Guid UserId { get; set; }
     public string Name { get; set; } = string.Empty;
